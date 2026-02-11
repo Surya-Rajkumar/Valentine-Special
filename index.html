@@ -108,7 +108,95 @@ function yesClicked() {
 
     document.body.innerHTML = `
         <h1>Karuvachiii ❤️</h1>
-    <img src="karuvachiii.jpg" width="250" style="border-radius:20px; margin-top:20px;">
+    <style>
+.heart-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.heart {
+    width: 220px;
+    height: 200px;
+    position: relative;
+    transform: rotate(-45deg);
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+}
+
+.heart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(45deg);
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 200px;
+    background: inherit;
+    border: 4px solid #ff4d6d;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -110px;
+    left: 0;
+}
+
+.heart:after {
+    left: 110px;
+    top: 0;
+}
+
+.heart {
+    border: 4px solid #ff4d6d;
+    border-top: none;
+    border-left: none;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff4d6d;
+}
+
+/* Bigger middle heart */
+.heart.middle {
+    width: 260px;
+    height: 240px;
+    box-shadow: 0 0 40px #ff004f;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: rotate(-45deg) translateY(0px); }
+    50% { transform: rotate(-45deg) translateY(-15px); }
+    100% { transform: rotate(-45deg) translateY(0px); }
+}
+</style>
+
+
+<div class="heart-gallery">
+
+    <!-- Left Image -->
+    <div class="heart">
+        <img src="left.jpg">
+    </div>
+
+    <!-- Middle Image (Karuvachiii) -->
+    <div class="heart middle">
+        <img src="Karuvachiii.jpg">
+    </div>
+
+    <!-- Right Image -->
+    <div class="heart">
+        <img src="right.jpg">
+    </div>
+
+</div>
     <div id="loveLetter"></div>
     <br>
     <div class="glow">I Love You Dii Pondatii ♥</div>
@@ -216,4 +304,5 @@ function startHeartRain() {
 
 </body>
 </html>
+
 
